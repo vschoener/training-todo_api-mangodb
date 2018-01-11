@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  app:
+    build: ./docker/node
+    command: ["npm", "start"]
+    ports:
+      - 80:80
+    networks: 
+      - backend
+    volumes:
+      - ./:/app
+    links:
+      - database
+    networks:
+      - backend
+
+  database:
+    build: ./docker/mongo
+    ports:
+      - 27017:27017
+    networks: 
+      - backend
+
+networks:
+  backend: {}

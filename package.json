@@ -1,0 +1,21 @@
+{
+  "name": "api-mangodb-weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "mocha **/*.test.js --exit",
+    "dev": "nodemon --exec npm start"
+  },
+  "author": "Vincent Schoener",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
