@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
-    "test": "mocha **/*.test.js --exit",
+    "start": "node src/app",
+    "test": "mocha src/**/*.test.js --exit",
     "dev": "nodemon --exec npm start"
   },
   "author": "Vincent Schoener",
