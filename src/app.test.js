@@ -20,7 +20,7 @@ describe('App Server', () => {
             .get('/')
             .end((err, res) => {
                 res.should.have.status(200);
-                res.body.should.have.property('message', 'Server is live!');
+                res.body.should.have.property('message', 'Welcome to the API');
                 done();
             });
     });
