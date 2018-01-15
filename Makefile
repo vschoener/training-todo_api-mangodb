@@ -8,7 +8,7 @@ down:
 	docker-compose down
 
 test:
-	docker-compose -f docker-compose.test.yml up
+	docker-compose -f docker-compose.test.yml up --exit-code-from app_test
 
 prod:
 	docker-compose -f docker-compose.yml up

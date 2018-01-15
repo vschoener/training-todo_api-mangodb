@@ -1,1 +1,7 @@
 /node_modules
+/src/config/*.js
+!/src/config/loader.js
+!/src/config/test.js
+
+# Not revelant in real world project and won't exist
+/playground

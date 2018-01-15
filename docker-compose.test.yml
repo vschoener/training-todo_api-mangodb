@@ -9,8 +9,23 @@ services:
     environment:
       - NODE_ENV=test
       - NODE_API_PORT=8080
+      - DATABASE_URI=mongodb://database:27017/TodoAppTest
     volumes:
       - ./:/app
+    links:
+      - database
+
+  database:
+    build: ./docker/mongo
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - 27017:27017
+    networks: 
+      - backend
+
+volumes:
+  mongodb:
 
 networks:
   backend:

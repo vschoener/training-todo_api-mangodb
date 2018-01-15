@@ -1,11 +1,11 @@
 {
-  "name": "api-mangodb-weather",
+  "name": "api-mangodb-todo",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node src/app",
-    "test": "mocha src/**/*.test.js --exit",
+    "test": "mocha 'src/**/*.test.js' --exit",
     "dev": "nodemon --exec npm start"
   },
   "author": "Vincent Schoener",
@@ -16,6 +16,7 @@
     "mocha": "^4.1.0"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9"
   }
 }

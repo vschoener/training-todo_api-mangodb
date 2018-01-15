@@ -17,10 +17,15 @@ services:
 
   database:
     build: ./docker/mongo
+    volumes:
+      - mongodb:/data/db
     ports:
       - 27017:27017
     networks: 
       - backend
+
+volumes:
+  mongodb:
 
 networks:
   backend: {}
