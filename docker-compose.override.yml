@@ -4,6 +4,8 @@ services:
   app:
     command: ["npm", "run", "dev"]
     environment:
-      - NODE_ENV=dev
-      - NODE_API_PORT=8080
+      - NODE_ENV=development
+      - NODE_API_PORT=80
       - DATABASE_URI=mongodb://database:27017/TodoApp
+    ports:
+      - 8080:80
