@@ -3,5 +3,8 @@
 !/src/config/loader.js
 !/src/config/test.js
 
+# Docker
+docker-compose.override.yml
+
 # Not revelant in real world project and won't exist
 /playground
