@@ -1,10 +1,13 @@
 module.exports = (mongoose) => {
     const app = require('express')();
     const bodyParser = require('body-parser');
+    const morgan = require('morgan');
     const apiVersions = ['1'];
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
+    
+    app.use(morgan('dev'));
     
     app.get('/', (req, res) => {
         return res.json({message: 'Welcome to the API'});
@@ -17,15 +20,15 @@ module.exports = (mongoose) => {
 
     // Error handler
     app.use((req, res, next) => {
-        return res.status(404)
-            .json({ error: { message: 'Resource not found' } })
-            .end();
+        const error = new Error('Resource not found');
+        error.proot = 404;
+        next(error);
     });
     
     app.use((err, req, res, next) => {
         // log err.stack
-        return res.status(500)
-            .json({ error: { message: 'Technical error' } })
+        res.status(err.status || 500);
+        return res.json({ error: { message: err.message } })
             .end();
     });
 
